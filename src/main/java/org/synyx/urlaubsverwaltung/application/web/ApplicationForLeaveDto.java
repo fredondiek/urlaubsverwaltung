@@ -2,9 +2,6 @@ package org.synyx.urlaubsverwaltung.application.web;
 
 import org.synyx.urlaubsverwaltung.period.DayLength;
 
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
-
 public class ApplicationForLeaveDto {
 
     private final int id;
@@ -13,10 +10,7 @@ public class ApplicationForLeaveDto {
     private final String duration;
     private final DayLength dayLength;
     private final String workDays;
-    private final LocalDate startDate;
-    private final ZonedDateTime startDateWithTime;
-    private final LocalDate endDate;
-    private final ZonedDateTime endDateWithTime;
+    private final String durationOfAbsenceDescription;
     private final boolean statusWaiting;
     private final boolean editAllowed;
     private final boolean approveAllowed;
@@ -24,8 +18,7 @@ public class ApplicationForLeaveDto {
 
     @SuppressWarnings("java:S107") // "Methods should not have too many parameters" - Builder is used for construction
     private ApplicationForLeaveDto(int id, Person person, VacationType vacationType, String duration,
-                                   DayLength dayLength, String workDays, LocalDate startDate,
-                                   ZonedDateTime startDateWithTime, LocalDate endDate, ZonedDateTime endDateWithTime,
+                                   DayLength dayLength, String workDays, String durationOfAbsenceDescription,
                                    boolean statusWaiting, boolean editAllowed, boolean approveAllowed,
                                    boolean rejectAllowed) {
         this.id = id;
@@ -34,10 +27,7 @@ public class ApplicationForLeaveDto {
         this.duration = duration;
         this.dayLength = dayLength;
         this.workDays = workDays;
-        this.startDate = startDate;
-        this.startDateWithTime = startDateWithTime;
-        this.endDate = endDate;
-        this.endDateWithTime = endDateWithTime;
+        this.durationOfAbsenceDescription = durationOfAbsenceDescription;
         this.statusWaiting = statusWaiting;
         this.editAllowed = editAllowed;
         this.approveAllowed = approveAllowed;
@@ -68,20 +58,8 @@ public class ApplicationForLeaveDto {
         return workDays;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public ZonedDateTime getStartDateWithTime() {
-        return startDateWithTime;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public ZonedDateTime getEndDateWithTime() {
-        return endDateWithTime;
+    public String getDurationOfAbsenceDescription() {
+        return durationOfAbsenceDescription;
     }
 
     public boolean isStatusWaiting() {
@@ -111,10 +89,7 @@ public class ApplicationForLeaveDto {
         private String duration;
         private DayLength dayLength;
         private String workDays;
-        private LocalDate startDate;
-        private ZonedDateTime startDateWithTime;
-        private LocalDate endDate;
-        private ZonedDateTime endDateWithTime;
+        private String durationOfAbsenceDescription;
         private boolean statusWaiting;
         private boolean editAllowed;
         private boolean approveAllowed;
@@ -150,23 +125,8 @@ public class ApplicationForLeaveDto {
             return this;
         }
 
-        Builder startDate(LocalDate startDate) {
-            this.startDate = startDate;
-            return this;
-        }
-
-        Builder startDateWithTime(ZonedDateTime startDateWithTime) {
-            this.startDateWithTime = startDateWithTime;
-            return this;
-        }
-
-        Builder endDate(LocalDate endDate) {
-            this.endDate = endDate;
-            return this;
-        }
-
-        Builder endDateWithTime(ZonedDateTime endDateWithTime) {
-            this.endDateWithTime = endDateWithTime;
+        Builder durationOfAbsenceDescription(String durationOfAbsenceDescription) {
+            this.durationOfAbsenceDescription = durationOfAbsenceDescription;
             return this;
         }
 
@@ -198,10 +158,7 @@ public class ApplicationForLeaveDto {
                 duration,
                 dayLength,
                 workDays,
-                startDate,
-                startDateWithTime,
-                endDate,
-                endDateWithTime,
+                durationOfAbsenceDescription,
                 statusWaiting,
                 editAllowed,
                 approveAllowed,
