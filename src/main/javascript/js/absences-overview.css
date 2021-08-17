@@ -113,6 +113,17 @@ th.vacationOverview-cal-head.today::after {
   }
 }
 
+.no-workday {
+  --bg-left-hue: 0;
+  --bg-left-saturation: 0%;
+  --bg-left-lightness: 100%;
+  --bg-left-opacity: 0.9;
+  --bg-right-hue: 0;
+  --bg-right-saturation: 0%;
+  --bg-right-lightness: 100%;
+  --bg-right-opacity: 0.9;
+}
+
 .absence-full,
 .absence-morning {
   --bg-left-hue: 49;

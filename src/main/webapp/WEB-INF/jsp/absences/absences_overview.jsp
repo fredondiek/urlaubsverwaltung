@@ -198,7 +198,8 @@
                                         ${(absence.type.publicHolidayFull) ? ' public-holiday-full' : ''}
                                         ${(absence.type.publicHolidayMorning) ? ' public-holiday-morning' : ''}
                                         ${(absence.type.publicHolidayNoon) ? ' public-holiday-noon' : ''}
-                                        ${(absence.weekend) ? ' weekend' : ''}"
+                                        ${(absence.weekend) ? ' weekend' : ''}
+                                        ${(absence.workday) ? '' : ' no-workday'}"
                                 >
                                     <span class="tw-hidden print:tw-inline print:tw-font-mono">
                                         <c:if test="${absence.type.waitingVacationMorning}">

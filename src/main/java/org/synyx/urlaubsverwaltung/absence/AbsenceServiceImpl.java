@@ -105,10 +105,8 @@ public class AbsenceServiceImpl implements AbsenceService {
             .collect(toList());
     }
 
-    private List<AbsencePeriod> generateAbsencePeriodFromApplication(List<Application> applications,
-                                                                     DateRange askedDateRange,
-                                                                     List<WorkingTime> workingTimeList,
-                                                                     FederalState systemDefaultFederalState) {
+    private List<AbsencePeriod> generateAbsencePeriodFromApplication(List<Application> applications, DateRange askedDateRange,
+                                                                     List<WorkingTime> workingTimeList, FederalState systemDefaultFederalState) {
         return applications.stream()
             .map(application -> toAbsencePeriod(application, askedDateRange, workingTimeList, systemDefaultFederalState))
             .collect(toList());
