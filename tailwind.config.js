@@ -29,6 +29,9 @@ module.exports = {
       fontSize: {
         "10rem": "10rem",
       },
+      colors: {
+        "black-almost": "#444444",
+      },
     },
     screens: {
       // cannot use 'extend' as `xs` would override other screens
